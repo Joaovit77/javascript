@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Estrangeiro</title>
+</head>
+<body>
+    <label for="nacio">Sua nacionalidade: </label><input type="text" name="nacio" id="nacio">
+    <input type="button" value="Verificar" id="verificador">
+    <div id="res"></div>
+    <script>
+        let nacio = document.getElementById('nacio');
+        let res = document.getElementById('res');
+        let veri = document.getElementById('verificador');
+        veri.addEventListener('click' , clicador);
+        function clicador(){
+            let nacio2 = nacio.value.toUpperCase();
+
+            if (nacio2 == 'BRASIL'){
+                res.innerHTML = 'Você é Brasileiro'
+            } else{
+                res.innerHTML = `Você é Estrangeiro`
+            }
+            
+        }
+    </script>
+</body>
+</html>

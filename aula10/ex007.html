@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            font: normal 14pt Arial;
+            
+        }
+
+        main#container{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 10px;   
+        }
+
+
+        div#filho{
+            background: rgb(61, 132, 238);
+            padding: 10px;
+            width: 400px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        h1{
+            margin-top: 40px;
+            margin-bottom:20px;
+        }
+
+        input{
+            width: 100px;
+            padding: 5px;
+        }
+
+        div#res{
+            margin-top: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <main id="container">
+        <div id="filho">
+            <h1>Somando Valores</h1>
+            <input type="number" name="txtn1" id="txtn1"> +
+            <input type="number" name="txtn2" id="txtn2">
+            <input type="button" value="Somar" id="soma">
+            <div id="res">Resultado</div>
+        </div>
+    </main>
+    <script>
+        let soma = document.getElementById('soma')
+        soma.addEventListener('click', somar);
+
+        function somar(){
+        let tn1 = document.getElementById('txtn1');
+        let tn2 = document.getElementById('txtn2');
+        let res = document.getElementById('res');
+
+        let n1 = Number(tn1.value);
+        let n2 = Number(tn2.value);
+        let soma = n1 + n2;
+        res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${soma}</strong>`;
+    }
+    </script>
+</body>
+</html>
